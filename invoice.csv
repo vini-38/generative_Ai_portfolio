@@ -1,0 +1,61 @@
+Invoice_ID,Vendor_Name,Invoice_Date,Amount,Category,Payment_Status,Quantity,Unit_Price,Tax,Department,Payment_Method
+INV001,CloudNine Pvt Ltd,2026-06-29,364000.0,Maintenance,Pending,13,25000,39000.0,Finance,Credit Card
+INV002,CloudNine Pvt Ltd,2026-03-16,184800.0,Travel,Paid,11,15000,19800.0,Operations,UPI
+INV003,DataCore Ltd,2026-05-10,189000.0,Consulting,Pending,12,15000,9000.0,Sales,Bank Transfer
+INV004,ABC Technologies,2026-08-07,302500.0,Consulting,Rejected,11,25000,27500.0,HR,Credit Card
+INV005,Nova Enterprises,2026-03-05,70875.0,Cloud Services,Pending,9,7500,3375.0,IT,Credit Card
+INV006,Zenith Solutions,2026-05-12,99000.0,Hardware,Paid,9,10000,9000.0,Finance,Bank Transfer
+INV007,Zenith Solutions,2026-03-25,336000.0,Consulting,Paid,12,25000,36000.0,HR,UPI
+INV008,ABC Technologies,2026-06-13,22000.0,Travel,Paid,2,10000,2000.0,Finance,UPI
+INV009,BlueWave Services,2026-07-10,11000.0,Hardware,Pending,2,5000,1000.0,Operations,Bank Transfer
+INV010,DataCore Ltd,2026-02-09,82500.0,Maintenance,Pending,5,15000,7500.0,IT,Bank Transfer
+INV011,ABC Technologies,2026-06-06,34125.0,Software,Pending,13,2500,1625.0,Operations,Credit Card
+INV012,PQR Systems,2026-03-22,67200.0,Software,Pending,8,7500,7200.0,Finance,Credit Card
+INV013,Zenith Solutions,2026-02-10,315000.0,Consulting,Paid,12,25000,15000.0,,Credit Card
+INV014,Nova Enterprises,2026-04-14,50400.0,Software,Paid,6,7500,5400.0,HR,Bank Transfer
+INV015,BlueWave Services,2026-08-06,192500.0,Cloud Services,Paid,7,25000,17500.0,Finance,UPI
+INV016,Nova Enterprises,2026-07-24,84000.0,Software,Paid,3,25000,9000.0,Operations,UPI
+INV017,BlueWave Services,2026-05-31,117600.0,Cloud Services,Paid,7,15000,12600.0,Sales,Credit Card
+INV018,PQR Systems,2026-03-27,66000.0,Maintenance,Paid,12,5000,6000.0,Sales,UPI
+INV019,Nova Enterprises,2026-01-28,132000.0,Travel,Paid,12,10000,12000.0,Finance,Credit Card
+INV020,Nova Enterprises,2026-08-05,147000.0,Software,Paid,7,20000,7000.0,IT,Bank Transfer
+INV021,Zenith Solutions,2026-05-12,99000.0,Software,Paid,7,20000,16800.0,IT,Credit Card
+INV022,Zenith Solutions,2026-05-12,99000.0,Travel,Paid,8,25000,24000.0,IT,Bank Transfer
+INV023,DataCore Ltd,2026-07-05,44000.0,Hardware,Pending,4,10000,4000.0,Sales,Bank Transfer
+INV024,SmartEdge Solutions,2026-03-22,30250.0,Hardware,Paid,11,2500,2750.0,Sales,Bank Transfer
+INV025,ABC Technologies,2026-05-27,73500.0,Consulting,Paid,14,5000,3500.0,Operations,Credit Card
+INV026,PQR Systems,2026-07-03,30800.0,Travel,Paid,11,2500,3300.0,Operations,UPI
+INV027,DataCore Ltd,2026-08-02,288750.0,Software,Paid,11,25000,13750.0,Sales,Credit Card
+INV028,Nova Enterprises,2026-07-06,33000.0,Cloud Services,Pending,4,7500,3000.0,Operations,
+INV029,Nova Enterprises,2026-06-10,220000.0,Software,Pending,8,25000,20000.0,IT,Bank Transfer
+INV030,Zenith Solutions,2026-05-31,78400.0,Consulting,Paid,14,5000,8400.0,IT,Bank Transfer
+INV031,Zenith Solutions,2026-05-09,147000.0,Maintenance,Pending,14,10000,7000.0,IT,Bank Transfer
+INV032,PQR Systems,2026-05-27,33000.0,Software,Pending,3,10000,3000.0,HR,Bank Transfer
+INV033,SmartEdge Solutions,2026-06-13,66000.0,Cloud Services,Paid,6,10000,6000.0,IT,Credit Card
+INV034,ABC Technologies,2026-04-03,44000.0,Hardware,Pending,2,20000,4000.0,Sales,Bank Transfer
+INV035,Nova Enterprises,2026-06-10,11000.0,Maintenance,Paid,4,2500,1000.0,HR,Bank Transfer
+INV036,SmartEdge Solutions,2026-02-02,100800.0,Travel,Paid,12,7500,10800.0,Sales,Credit Card
+INV037,DataCore Ltd,2026-01-08,90750.0,Maintenance,Paid,11,7500,8250.0,Operations,Credit Card
+INV038,SmartEdge Solutions,2026-07-16,201600.0,Consulting,Paid,12,15000,21600.0,IT,Bank Transfer
+INV039,Nova Enterprises,2026-08-08,231000.0,Maintenance,Pending,14,15000,21000.0,Operations,Bank Transfer
+INV040,BlueWave Services,2026-01-24,35750.0,Maintenance,Pending,13,2500,3250.0,Operations,Bank Transfer
+INV041,Nova Enterprises,2026-07-10,175000.0,Software,Paid,13,15000,23400.0,Finance,Bank Transfer
+INV042,Zenith Solutions,2026-02-23,225000.0,Hardware,Pending,10,7500,7500.0,Finance,Credit Card
+INV043,PQR Systems,2026-05-10,26250.0,Software,Pending,10,2500,1250.0,Sales,UPI
+INV044,CloudNine Pvt Ltd,2026-01-26,15750.0,Maintenance,Paid,3,5000,750.0,IT,Bank Transfer
+INV045,Nova Enterprises,2026-03-06,176000.0,Consulting,Pending,8,20000,16000.0,Operations,UPI
+INV046,Zenith Solutions,2026-02-01,192500.0,Cloud Services,Paid,7,25000,17500.0,Sales,UPI
+INV047,Zenith Solutions,2026-02-27,16500.0,Travel,Paid,6,2500,1500.0,HR,Bank Transfer
+INV048,ABC Technologies,2026-01-08,52500.0,Consulting,Pending,5,10000,2500.0,Operations,UPI
+INV049,CloudNine Pvt Ltd,2026-04-09,73500.0,,Paid,7,10000,3500.0,HR,Bank Transfer
+INV050,SmartEdge Solutions,2026-03-04,33000.0,Hardware,Paid,3,10000,3000.0,Sales,UPI
+INV051,CloudNine Pvt Ltd,2026-05-07,94500.0,Software,Paid,9,10000,4500.0,IT,Credit Card
+INV052,Zenith Solutions,2026-04-06,294000.0,Maintenance,Paid,14,20000,14000.0,Sales,Credit Card
+INV053,SmartEdge Solutions,2026-07-10,105000.0,Cloud Services,Paid,5,20000,5000.0,HR,Bank Transfer
+INV054,DataCore Ltd,2026-07-04,273000.0,Software,Paid,13,20000,13000.0,Operations,Bank Transfer
+INV055,Nova Enterprises,2026-05-24,52500.0,Consulting,Paid,10,5000,2500.0,Sales,Credit Card
+INV056,Zenith Solutions,2026-01-10,99000.0,Consulting,Paid,6,15000,9000.0,Finance,Credit Card
+INV057,Zenith Solutions,2026-04-06,15750.0,Consulting,Pending,1,15000,750.0,Finance,Bank Transfer
+INV058,Nova Enterprises,2026-05-08,121000.0,Cloud Services,Pending,11,10000,11000.0,IT,Bank Transfer
+INV059,PQR Systems,2026-06-20,56000.0,Software,Rejected,5,10000,6000.0,Finance,Credit Card
+INV060,Nova Enterprises,2026-01-29,145600.0,Travel,Paid,13,10000,15600.0,HR,UPI
