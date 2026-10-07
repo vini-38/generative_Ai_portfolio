@@ -3,13 +3,16 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# Load trained model
+
+# Load trained CNN model
 model = tf.keras.models.load_model("mnist_cnn.keras")
 
-# Title
-st.title("MNIST Handwritten Digit Classifier")
 
-st.write("Upload a handwritten digit image (0-9)")
+# Application title
+st.title("MNIST Digit Classifier")
+
+st.write("Upload a handwritten digit image")
+
 
 # Upload image
 uploaded_file = st.file_uploader(
@@ -17,31 +20,54 @@ uploaded_file = st.file_uploader(
     type=["png", "jpg", "jpeg"]
 )
 
+
+# Execute only after user uploads an image
 if uploaded_file is not None:
 
-    # Open image
-    image = Image.open(uploaded_file).convert("L")
+    # Open uploaded image using Pillow
+    image = Image.open(uploaded_file)
 
-    # Display image
-    st.image(image, caption="Uploaded Image")
+    # Convert image to grayscale
+    image = image.convert("L")
 
     # Resize image to 28 x 28
-    image = image.resize((28, 28))
+    image = image.resize(
+        (28, 28),
+        Image.Resampling.LANCZOS
+    )
 
-    # Convert image to numpy array
-    image = np.array(image)
+    # Display image
+    st.image(
+        image,
+        caption="Uploaded Image"
+    )
+
+    # Convert image into NumPy array
+    image_array = np.array(image)
 
     # Normalize pixel values
-    image = image / 255.0
+    image_array = image_array / 255.0
 
-    # Reshape image
-    image = image.reshape(1, 28, 28, 1)
+    # Reshape according to CNN input shape
+    image_array = image_array.reshape(
+        1, 28, 28, 1
+    )
 
-    # Prediction
-    prediction = model.predict(image)
+    # Make prediction
+    prediction = model.predict(image_array)
 
     # Find predicted digit
     predicted_digit = np.argmax(prediction)
 
-    # Display result
-    st.success(f"Predicted Digit: {predicted_digit}")
+    # Find confidence
+    confidence = np.max(prediction)
+
+    # Display prediction
+    st.success(
+        f"Predicted Digit: {predicted_digit}"
+    )
+
+    # Display confidence
+    st.write(
+        f"Confidence: {confidence:.2%}"
+    )
