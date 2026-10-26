@@ -13,7 +13,7 @@ from tensorflow.keras.layers import Dense,Flatten
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.losses import BinaryCrossentropy
 from tensorflow.keras.optimizers import Adam
-import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 
 (x_train,y_train),(x_test,y_test)=mnist.load_data()
