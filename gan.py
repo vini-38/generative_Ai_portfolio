@@ -18,8 +18,8 @@ import numpy as np
 
 (x_train,y_train),(x_test,y_test)=mnist.load_data()
 x_train=(x_train-127.5)/127.5
-print(x_train.shape[0])
-print(x_train.shape[1:])
+
+
 
 generator=Sequential([tf.keras.Input(shape=(100,)),
                       Dense(256,activation="relu"),
@@ -30,7 +30,8 @@ discriminator=Sequential([tf.keras.Input(shape=(28,28)),Flatten(),
                         Dense(256,activation="relu"),
                         Dense(128,activation="relu"),
                         Dense(1,activation="sigmoid")])
-discriminator.summary()
+
+
 
 cross_entropy=BinaryCrossentropy()
 generator_optimizer=Adam()
@@ -136,3 +137,15 @@ for i in range(16):
 
 plt.tight_layout()
 plt.show()
+import tensorflow as tf
+import streamlit as st
+
+@st.cache_resource
+def load_generator():
+    return tf.keras.models.load_model("generator.keras")
+
+def generate_images(n=16):
+    generator = load_generator()
+    noise = tf.random.normal([n, 100])
+    images = generator(noise, training=False).numpy()
+    return (images + 1) / 2
