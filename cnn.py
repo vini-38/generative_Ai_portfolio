@@ -1,19 +1,38 @@
+    
 import streamlit as st
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 from PIL import Image
 
+# Page configuration
+st.set_page_config(
+    page_title="CNN Image Classifier",
+    page_icon="🖼️"
+)
+
 st.title("CNN Image Classification")
-st.write("Upload an image to predict its category")
+st.write("Upload an image to predict its category.")
+
+# CIFAR-10 class names (10 classes)
+class_names = [
+    "Airplane",
+    "Automobile",
+    "Bird",
+    "Cat",
+    "Deer",
+    "Dog",
+    "Frog",
+    "Horse",
+    "Ship",
+    "Truck"
+]
 
 # Load trained CNN model
-model = tf.keras.models.load_model("cnn_image_classifier.keras")
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model("cnn_image_classifier.keras")
 
-# Get image size from model
-image_size = model.input_shape[1:3]
-
-# Change these labels to match your dataset
-class_names = ["Class 1", "Class 2"]
+model = load_model()
 
 # Upload image
 uploaded_file = st.file_uploader(
@@ -23,27 +42,46 @@ uploaded_file = st.file_uploader(
 
 if uploaded_file is not None:
 
+    # Read image
     image = Image.open(uploaded_file).convert("RGB")
 
-    st.image(image, caption="Uploaded Image")
+    st.image(image, caption="Uploaded Image", width=250)
 
-    # Resize image
-    image = image.resize((image_size[1], image_size[0]))
+    # Preprocess image
+    image = image.resize((32, 32))
 
-    # Convert image into array
-    image_array = np.array(image)
+    image_array = np.array(image, dtype=np.float32)
 
-    # Normalize image (only if training used /255)
+    # Normalize image
     image_array = image_array / 255.0
 
     # Add batch dimension
     image_array = np.expand_dims(image_array, axis=0)
 
     # Prediction
-    prediction = model.predict(image_array)
+    predictions = model.predict(image_array)
 
-    predicted_class = np.argmax(prediction[0])
+    # Get predicted class
+    predicted_class = int(np.argmax(predictions[0]))
 
-    st.success("Prediction: " + class_names[predicted_class])
+    # Get confidence
+    confidence = float(np.max(predictions[0])) * 100
 
-    st.write("Confidence:", round(float(np.max(prediction)) * 100, 2), "%")
+    # Check class index
+    if len(predictions[0]) == len(class_names):
+
+        st.success(
+            "Prediction: " + class_names[predicted_class]
+        )
+
+        st.write(
+            "Confidence:",
+            round(confidence, 2),
+            "%"
+        )
+
+    else:
+        st.error(
+            "Model output does not match CIFAR-10 classes. "
+            "Please check your trained model."
+        )
